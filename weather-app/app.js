@@ -11,6 +11,7 @@ let sunny = chalk.black.bgYellow;
 let rainy = chalk.white.bgBlue;
 let cloudy = chalk.black.bgCyan;
 let bold = chalk.bold;
+let error = chalk.bold.red;
 
 if (weatherData[cityInput]) {
   const [ temperature, weatherCondition ] = weatherData[cityInput];
@@ -20,6 +21,8 @@ if (weatherData[cityInput]) {
                       : cloudy(weatherCondition);
 
   console.log(`Today's forecast in ${bold(cityInput)} is ${styledWeather} with a high of ${bold(temperature)}.`);
+} else {
+    console.log(`${error('Error:')} city not found.`);
 }
 
 
